@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: rgb(255, 247, 196);
+  padding: 10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
+  margin-top: 0;
+}
+
+img {
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2 {
+  background-color: rgb(22, 112, 112);
+  text-transform: capitalize;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+img {
+  border-width: 10px;
+  border-style: groove;
+}
+h2 + img {
+  border-color: rgb(22, 112, 112);
+}
+img h3 + img,
+.imgBox img {
+  border-color: tomato;
+}
+.mb-0 {
+  margin-bottom: 0;
+}
+.text-center {
+  text-align: center;
+}
+.mr-30 {
+  margin-right: 30px;
+}
+.py-30 {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.color-green {
+  color: rgb(22, 112, 112);
+}
+.color-tomato {
+  color: tomato;
+}
+.imgBox {
+  margin-bottom: 20px;
+}
+.column {
+  width: 48%;
+  display: inline-block;
+}
+
+.inner-row {
+  border: 4px dashed rgb(22, 112, 112);
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.py-30 a {
+  font-size: 25px;
+}
+li {
+  margin-bottom: 5px;
+}
+
+.btn {
+  color: white;
+  background-color: tomato;
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+button {
+  color: white;
+  background-color: rgb(22, 112, 112);
+  padding: 8px 60px;
+  border: none;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.form-control {
+  margin-bottom: 20px;
+}

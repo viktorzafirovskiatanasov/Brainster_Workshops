@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: rgb(78, 70, 51);
+  color: white;
+  padding: 10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
+  margin-top: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2 {
+  color: rgb(77, 173, 233);
+  text-transform: capitalize;
+}
+
+span {
+  color: yellow;
+}
+hr {
+  border-color: rgba(68, 60, 44, 0.718);
+}
+a {
+  color: red;
+}
+p img {
+  height: 200px;
+}
+
+a img {
+  width: 100px;
+  border: 1px solid red;
+}
