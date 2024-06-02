@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            let arr = [5, -1, 3, -9, 8, -3, 4, 6, -2, -6, 7];
+
+            const negativeArr = arr.filter(function(e){
+                return e < 0;
+            });
+
+            arr = arr.filter(function(e){
+                return e > 0;
+            });
+
+            const convertedNegative = negativeArr.map(function(e){
+                return Math.abs(e);
+            });
+            
+            // [1, 9, 3, 2, 6]
+            const reducedPositive = arr.reduce(function(acc, curent){
+                return acc + curent;
+                //0. acc = 0 current = 1
+                //1. acc = 1 current = 9
+                //2. acc = 10 current = 3
+                //3. acc = 13 current = 2
+                //4. acc = 15 current = 6
+                //final return 21
+            }, 0);
+
+            const reducedNegative = convertedNegative.reduce(function(acc, curent){
+                return acc + curent;
+            }, 0);
+
+            console.log(reducedPositive, reducedNegative);
+
+
+
+
+
+
+            // let negaveOnly = [];
+
+            // let tempArr = [];
+
+            // for (let i = 0; i < arr.length; i++) {
+            //     if(arr[i] < 0){
+            //         negaveOnly.push(arr[i]);
+            //     } else {
+            //         tempArr.push(arr[i]);
+            //     }
+            // }
+
+            // arr = tempArr;
+        </script>
+    </body>
+</html>

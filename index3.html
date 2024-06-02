@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="atm"></div>
+        <script>
+            let amount = parseInt(prompt("Enter amount to withdraw"));
+
+            if (isNaN(amount)) {
+                alert("Please make sure to enter a number");
+                location.reload();
+            }
+
+            const isValidForATM = (amount) => amount % 5;
+
+            // same functionality as above
+
+            // const isValidForATM1 = (amount) => {
+            //     if(amount % 5 === 0){
+            //         return true;
+            //     } else {
+            //         return false;
+            //     }
+            // }
+
+            const checkBanknotes1 = amount => {
+                if (isValidForATM(amount)) {
+                    return "Please enter a number that ends with a 5 or 0";
+                }
+                let initialAmount = amount;
+
+                let b1000 = 0;
+                let b500 = 0;
+                let b100 = 0;
+                let b50 = 0;
+                let b10 = 0;
+                let b5 = 0;
+
+                b1000 = Math.floor(amount / 1000);
+                amount %= 1000;
+
+                b500 = Math.floor(amount / 500);
+                amount %= 500;
+
+                b100 = Math.floor(amount / 100);
+                amount %= 100;
+
+                b50 = Math.floor(amount / 50);
+                amount %= 50;
+
+                b10 = Math.floor(amount / 10);
+                amount %= 10;
+
+                b5 = Math.floor(amount / 5);
+                amount %= 5;
+
+                return `The requested amount ${initialAmount} would be: <br> ${b1000} x 1000<br> ${b500} x 500<br> ${b100} x 100<br> ${b50} x 50<br> ${b10} x 10<br> ${b5} x 5<br>`;
+            };
+
+            const checkBanknotes2 = amount => {
+                if (isValidForATM(amount)) {
+                    return "Please enter a number that ends with a 5 or 0";
+                }
+
+                const banknotes = [1000, 500, 100, 50, 10, 5];
+                let count = 0;
+                let msg = `The requested amount ${amount} would be: <br>`;
+                for (let i = 0; i < banknotes.length; i++) {
+                    count = Math.floor(amount / banknotes[i]);
+                    amount %= banknotes[i];
+                    msg += `${count} x ${banknotes[i]}<br>`;
+                }
+                return msg;
+            };
+
+            document.querySelector("#atm").innerHTML = checkBanknotes2(amount);
+        </script>
+    </body>
+</html>

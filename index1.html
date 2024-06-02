@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="result"></div>
+        <button onClick="location.reload()">Reload</button>
+
+        <script>
+            let number1 = parseInt(prompt("Enter value for number1"));
+            let number2 = parseInt(prompt("Enter value for number2"));
+            
+            function compare(a, b) {
+                if (isNaN(a) || isNaN(b)) {
+                    return "Please make sure to enter a number.";
+                }
+
+                if (a === b) {
+                    return `Numbers ${a} and ${b} are equal.`;
+                }
+
+                // if(a > b){
+                //     return `Number ${a} is greater than ${b}.`;
+                // } else {
+                //     return `Number ${b} is greater than ${a}.`;
+                // }
+
+                return a > b
+                    ? `Number ${a} is greater than ${b}.`
+                    : `Number ${b} is greater than ${a}.`;
+            }
+
+            let div = document.querySelector("#result");
+
+            let newP = document.createElement("p");
+            newP.innerText = compare(number1, number2);
+
+            div.appendChild(newP);
+
+            // console.log(newP);
+        </script>
+    </body>
+</html>

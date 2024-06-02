@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .red {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+        </ul>
+
+        <script>
+            let number1 = parseInt(prompt("Enter value for number1"));
+
+            if (isNaN(number1)) {
+                alert("Please make sure to enter a number");
+                location.reload();
+            }
+
+            colorElements(number1, "li");
+
+            function colorElements(number, element) {
+                let elements = document.querySelectorAll(element); // 
+                number = number > elements.length ? elements.length : number;
+
+                // for (let i = 0; i < number; i++) {
+                    // elements[i].style.color = "red";
+                    // elements[i].classList.add('red');
+                // }
+                // elements [1, 2, 3, 4, 5]
+
+                
+                
+                elements.forEach(function(element, index){ 
+                    // console.log(element, index)
+                    if(number > index){
+                        element.classList.add('red');
+                    }
+                });
+                
+            }
+        </script>
+    </body>
+</html>
