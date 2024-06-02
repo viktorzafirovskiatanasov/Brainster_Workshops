@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <style>
+        #counter{
+            width: 100px;
+            height: 100px;
+            background-color: cadetblue;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="counter"></div>
+    <button id="btn">Reset</button>
+
+    <script>
+        let counter = document.querySelector('#counter');
+
+        let count = 0;
+
+        counter.addEventListener('click', function(e){
+            count++;
+            e.target.innerText = count;
+            // console.log(count);
+            // counter.innerText = count;
+
+            // console.dir(e.target);
+            // console.dir(counter);
+        });
+
+        let btn = document.querySelector('#btn');
+
+        btn.addEventListener('click', function(e){
+            // location.reload(); - opcija br. 1
+            count = 0;
+            // counter.innerText = count - opcija br 2;
+            e.target.previousElementSibling.innerText = count; // opcija br. 3
+        });
+
+    </script>
+</body>
+</html>

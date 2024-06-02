@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta name="author" content="Deniz Jusufovic" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <style type="text/css">
+            .nav {
+                background-color: orange;
+            }
+            .nav a {
+                color: white;
+            }
+            .bordered {
+                border: 1px solid grey;
+                background-color: white;
+                padding: 50px 70px 50px 30px;
+                margin-bottom: 70px;
+            }
+            .bordered img {
+                width: 70px;
+                filter: invert(56%) sepia(42%) saturate(5504%)
+                    hue-rotate(360deg) brightness(101%) contrast(106%);
+            }
+            .bordered h4 {
+                font-size: 24px;
+                font-weight: 900;
+            }
+            .bordered p {
+                font-size: 17px;
+                line-height: 24px;
+                margin-bottom: 0px;
+            }
+            .featuredd {
+                margin-bottom: 100px;
+            }
+
+            .featuredd .stars p {
+                display: inline-block;
+                padding-left: 15px;
+                font-size: 15px;
+            }
+
+            .featuredd .stars i:not(:last-of-type) {
+                color: orange;
+            }
+
+            .featuredd .order {
+                height: 100%;
+                background-color: orange;
+                color: white;
+            }
+
+            .featuredd .m-y {
+                margin-top: 20px;
+            }
+
+            h2 {
+                font-size: 55px;
+                font-weight: bold;
+                text-align: center;
+                margin-bottom: 30px;
+                margin-top: 30px;
+            }
+            .title {
+                color: orange;
+                font-size: 30px;
+                margin-bottom: 15px;
+                text-align: center;
+            }
+            .orangeText {
+                color: orange;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="navbar-header">
+                            <button
+                                type="button"
+                                class="navbar-toggle collapsed"
+                                data-toggle="collapse"
+                                data-target="#menu-collapse"
+                            >
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a href="#" class="navbar-brand">Restaurant</a>
+                        </div>
+                        <div
+                            class="collapse navbar-collapse"
+                            id="menu-collapse"
+                        >
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="row specialities">
+                <div class="col-md-12">
+                    <h2>Our Specialities</h2>
+                </div>
+            </div>
+            <div class="row featured-food">
+                <div class="col-md-12">
+                    <h2>Our Featured Food</h2>
+                </div>
+            </div>
+            <div class="row menu">
+                <div class="col-md-12">
+                    <h2>Our Food Menu</h2>
+                </div>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-4 breakfast">
+                            <h3 class="title">Breakfast menu</h3>
+                        </div>
+                        <div class="col-md-4 lunch">
+                            <h3 class="title">Lunch menu</h3>
+                        </div>
+                        <div class="col-md-4 dinner">
+                            <h3 class="title">Dinner menu</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <script type="text/javascript">
+            //Specialities
+
+            let special1 = {
+                imgId: "1",
+                title: "Healthy Salads",
+                description:
+                    "Salads can be healthy, satisfying meals on their own or perfect accompaniments to main dishes. Whatever sort of salad you're after, we've got a great selection",
+            };
+
+            let special2 = {
+                imgId: "2",
+                title: "Italian Pizza",
+                description:
+                    "Salads can be healthy, satisfying meals on their own or perfect accompaniments to main dishes. Whatever sort of salad you're after, we've got a great selection",
+            };
+
+            let special3 = {
+                imgId: "3",
+                title: "Burger",
+                description:
+                    "Salads can be healthy, satisfying meals on their own or perfect accompaniments to main dishes. Whatever sort of salad you're after, we've got a great selection",
+            };
+
+            let specialArr = [special1, special2, special3];
+
+            let specialitiesDiv = document.querySelector(".specialities");
+
+            // console.log(specialitiesDiv.innerHTML);
+
+            specialArr.forEach(function (element) {
+                specialitiesDiv.innerHTML += `<div class="col-md-4">
+											<div class="bordered">
+												<img src="./imgs/${element.imgId}.svg" alt="">
+												<h4>${element.title}</h4>
+												<p>${element.description}</p>
+											</div>
+										  </div>`;
+            });
+
+            //Featured food
+
+            let featured1 = {
+                imgId: "01",
+                title: "Angela's Burger",
+                stars: "4",
+            };
+            let featured2 = {
+                imgId: "02",
+                title: "Green Salad",
+                stars: "4",
+            };
+            let featured3 = {
+                imgId: "03",
+                title: "Salmon",
+                stars: "5",
+            };
+            let featured4 = {
+                imgId: "04",
+                title: "Best Brownies",
+                stars: "4",
+            };
+
+            let featuredArr = [featured1, featured2, featured3, featured4];
+
+            let featuredDiv = document.querySelector(".featured-food");
+
+            featuredArr.forEach(function (element) {
+                featuredDiv.innerHTML += `<div class="col-md-3">
+											<div class="row featuredd">
+												<div class="col-md-12">
+													<img class="img img-responsive" src="./imgs/${element.imgId}.jpg" alt="" >
+													<div class="row m-y">
+														<div class="col-md-8">
+															<h4>${element.title}</h4>
+															<div class="stars">
+																<i class="fa fa-star" aria-hidden="true"></i>
+																<i class="fa fa-star" aria-hidden="true"></i>
+																<i class="fa fa-star" aria-hidden="true"></i>
+																<i class="fa fa-star" aria-hidden="true"></i>
+																<i class="fa fa-star" aria-hidden="true"></i>
+																<p>${element.stars}</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>`;
+            });
+
+            // Food menu
+
+            // Brekfast
+            let breakfast1 = {
+                title: "Chicken Breast",
+                description: "This is description of chicken breasts!",
+                price: "$33.95",
+            };
+            let breakfast2 = {
+                title: "Salmon",
+                description: "This is description of chicken breasts!",
+                price: "$3.95",
+            };
+            let breakfast3 = {
+                title: "Crispy",
+                description: "This is description of chicken breasts!",
+                price: "$13.95",
+            };
+            let breakfast4 = {
+                title: "Fillet",
+                description: "This is description of chicken breasts!",
+                price: "$23.95",
+            };
+
+            let breakfastArr = [breakfast1, breakfast2, breakfast3, breakfast4];
+
+            let breakfastDiv = document.querySelector(".breakfast");
+
+            breakfastArr.forEach(function (element) {
+                breakfastDiv.innerHTML += `<div class="row">
+											<div class="col-md-12">
+												<div class="row">
+													<div class="col-md-8">
+														<h3>${element.title}</h3>
+													</div>
+													<div class="col-md-4 text-right price">
+														<h3>${element.price}</h3>
+													</div>
+												</div>
+												<p>${element.description}</p>
+											</div>
+										</div>`;
+            });
+
+            // Lunch
+
+            let lunch1 = {
+                title: "Chicken Breast",
+                description: "This is description of chicken breasts!",
+                price: "$33.95",
+            };
+            let lunch2 = {
+                title: "Salmon",
+                description: "This is description of chicken breasts!",
+                price: "$3.95",
+            };
+            let lunch3 = {
+                title: "Crispy",
+                description: "This is description of chicken breasts!",
+                price: "$13.95",
+            };
+            let lunch4 = {
+                title: "Fillet",
+                description: "This is description of chicken breasts!",
+                price: "$23.95",
+            };
+
+            let lunchArr = [lunch1, lunch2, lunch3, lunch4];
+
+            let lunchDiv = document.querySelector(".lunch");
+
+            lunchArr.forEach(function (element) {
+                lunchDiv.innerHTML += `<div class="row">
+											<div class="col-md-12">
+												<div class="row">
+													<div class="col-md-8">
+														<h3>${element.title}</h3>
+													</div>
+													<div class="col-md-4 text-right price">
+														<h3>${element.price}</h3>
+													</div>
+												</div>
+												<p>${element.description}</p>
+											</div>
+										</div>`;
+            });
+
+            // Dinner
+
+            let dinner1 = {
+                title: "Chicken Breast",
+                description: "This is description of chicken breasts!",
+                price: "$33.95",
+            };
+            let dinner2 = {
+                title: "Salmon",
+                description: "This is description of chicken breasts!",
+                price: "$3.95",
+            };
+            let dinner3 = {
+                title: "Crispy",
+                description: "This is description of chicken breasts!",
+                price: "$13.95",
+            };
+            let dinner4 = {
+                title: "Fillet",
+                description: "This is description of chicken breasts!",
+                price: "$23.95",
+            };
+
+            let dinnerArr = [dinner1, dinner2, dinner3, dinner4];
+
+            let dinnerDiv = document.querySelector(".dinner");
+
+            dinnerArr.forEach(function (element) {
+                dinnerDiv.innerHTML += `<div class="row">
+											<div class="col-md-12">
+												<div class="row">
+													<div class="col-md-8">
+														<h3>${element.title}</h3>
+													</div>
+													<div class="col-md-4 text-right price">
+														<h3>${element.price}</h3>
+													</div>
+												</div>
+												<p>${element.description}</p>
+											</div>
+										</div>`;
+            });
+
+            let cards = document.querySelectorAll(".bordered");
+
+            cards.forEach(function (element) {
+                element.addEventListener("mouseover", function (e) {
+                    element.style.color = "white";
+                    element.style.backgroundColor = "orange";
+                });
+
+                element.addEventListener("mouseout", function (e) {
+                    element.style.color = "black";
+                    element.style.backgroundColor = "white";
+                });
+            });
+
+			let priceTags = document.querySelectorAll(".price");
+
+			priceTags.forEach(function(element){
+				element.addEventListener("mouseover", function (e) {
+                    // element.style.color = "orange"; - opcija 1
+					// element.classList.add('orangeText'); - opcija 2
+					element.classList.toggle('orangeText'); // - opcija 3
+                });
+
+				element.addEventListener("mouseout", function (e) {
+                    // element.style.color = "black";
+					// element.classList.remove('orangeText');
+					element.classList.toggle('orangeText');
+                });
+			});
+
+			// document.addEventListener('mouseover', function(e){
+			// 	if(e.target.parentElement.classList.contains('price')){
+			// 		e.target.parentElement.classList.toggle('orangeText');
+			// 	}
+			// 	console.log('mouseover', e);
+			// });
+
+			// document.addEventListener('mouseout', function(e){
+			// 	if(e.target.parentElement.classList.contains('price')){
+			// 		e.target.parentElement.classList.toggle('orangeText');
+			// 	}
+			// 	console.log('mouseout', e);
+			// });
+
+            // console.log(cards);
+        </script>
+    </body>
+</html>

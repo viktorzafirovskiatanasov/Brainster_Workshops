@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+</head>
+<body>
+    <form id="form">
+        <label for="name" id="nameLabel">name</label>
+        <input type="text" name="name" id="name">
+        <br><br>
+        <label for="surname" id="surnameLabel">surname</label>
+        <input type="text" name="surname" id="surname">
+        <br><br>
+        <label for="age" id="ageLabel">age</label>
+        <input type="text" name="age" id="age">
+        <br><br>
+        <label for="email" id="emailLabel">email</label>
+        <input type="text" name="email" id="email">
+        <br><br>
+        <button type="submit">submit</button>
+    </form>
+
+    <script>
+        function validateForm(e){
+            e.preventDefault();
+
+            let name = document.querySelector('#name').value;
+            let surname = document.querySelector('#surname').value;
+            let age = document.querySelector('#age').value;
+            let email = document.querySelector('#email').value;
+
+            let nameLabel = document.querySelector('#nameLabel');
+            let surnameLabel = document.querySelector('#surnameLabel');
+            let ageLabel = document.querySelector('#ageLabel');
+            let emailLabel = document.querySelector('#emailLabel');
+
+            // if(name == ''){
+            //     console.log('empty name');
+            //     nameLabel.style.color = 'red';
+            // } else {
+            //      nameLabel.style.color = 'green';
+            // }
+
+            nameLabel.style.color = name == '' ? 'red' : 'green';
+            surnameLabel.style.color = surname == '' ? 'red' : 'green';
+            ageLabel.style.color = age == '' ? 'red' : 'green';
+            emailLabel.style.color = email == '' ? 'red' : 'green';
+
+            if(name && surname && age && email){
+                e.target.submit();
+            }
+        }
+
+        let form = document.querySelector('#form');
+
+        form.addEventListener('submit', validateForm);
+    </script>
+</body>
+</html>

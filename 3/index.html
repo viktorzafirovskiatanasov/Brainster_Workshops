@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>3</title>
+    </head>
+    <body>
+        <script>
+
+            // let dev = {
+            //     name: "John",
+            //     surname: "Doe",
+            //     age: 35,
+            //     exp: 4,
+            //     position: "PHP developer",
+            //     getSeniority: function () {
+            //         if(this.exp <= 1){
+            //             return 'junior';
+            //         } else if (this.exp > 1 && this.exp < 3) {
+            //             return 'intermediate';
+            //         } else {
+            //             return 'senior';
+            //         }
+            //     },
+            //     display: function () {
+            //         return `I am ${this.name} ${this.surname}, I am ${this.age} years old and I work as a ${this.getSeniority()} ${this.position}`;
+            //     }
+            // };
+
+            function Developer(name, surname, age, exp, position){
+                this.name = name;
+                this.surname = surname;
+                this.age = age;
+                this.exp = exp;
+                this.position = position;
+
+                this.getSeniority = function(){
+                    if(this.exp <= 1){
+                        return 'junior';
+                    } else if (this.exp > 1 && this.exp < 3) {
+                        return 'intermediate';
+                    } else {
+                        return 'senior';
+                    }
+                }
+
+                this.display = function(){
+                    return `I am ${this.name} ${this.surname}, I am ${this.age} years old and I work as a ${this.getSeniority()} ${this.position}.`;
+                }
+            }
+
+            let dev1 = new Developer('John', 'Doe', 35, 4, 'PHP developer');
+            let dev2 = new Developer('Jane', 'Doe', 27, 2, 'JS developer');
+
+
+            console.log(dev1);
+            console.log(dev2);
+
+        </script>
+        <!-- <script src="./index.js"></script> -->
+    </body>
+</html>
