@@ -1,0 +1,274 @@
+/* colors:
+nav-color: #f3f3f3
+lightblue: #9cdaf1
+green: #a7c3a7
+pink: #ffd5b3
+50/50 holder bg: lightgrey
+social icons bg: grey */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul {
+  margin-top: 0;
+}
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+main {
+  border-bottom: 2px solid grey;
+}
+
+/* UTILITY  */
+.row {
+  display: flex;
+}
+.col-50 {
+  flex-basis: 50%;
+}
+.col-33 {
+  flex-basis: 33.33%;
+}
+.bg-black {
+  background-color: black;
+}
+.text-white {
+  color: white;
+}
+
+.bg-lightblue {
+  background-color: #9cdaf1;
+}
+.bg-green {
+  background-color: #a7c3a7;
+}
+.bg-pink {
+  background-color: #ffd5b3;
+}
+.bg-lightgray {
+  background-color: lightgrey;
+}
+
+.btn {
+  border: 1px solid gray;
+  padding: 8px 15px;
+  color: gray;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: gray;
+  color: white;
+}
+.inner {
+  width: 80%;
+  margin: 0 auto;
+}
+.section {
+  padding: 60px 0;
+}
+/* UTILITY  */
+
+/* NAV  */
+nav {
+  background-color: #f3f3f3;
+}
+nav .inner.row {
+  justify-content: space-between;
+  align-items: center;
+}
+nav h1 {
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+nav ul li:not(:last-child) {
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: black;
+}
+nav ul li a:hover {
+  color: grey;
+}
+/* NAV  */
+/* FIRST SECTION  */
+.first-section h2 {
+  margin-bottom: 0;
+  text-align: center;
+  padding: 80px 30px;
+}
+/* FIRST SECTION  */
+/* SECOND SECTION  */
+.second-section {
+  color: gray;
+  text-align: center;
+}
+
+.second-section span {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  border-radius: 50%;
+  border: 1px solid gray;
+  margin-bottom: 20px;
+}
+.second-section p {
+  margin-bottom: 20px;
+}
+
+.second-section .col-33:not(:last-child) {
+  margin-right: 60px;
+}
+/* SECOND SECTION  */
+/* THIRD SECTION  */
+.third-section {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.third-section .col-50:not(:last-child) {
+  margin-right: 40px;
+}
+/* THIRD SECTION  */
+/* FOURTH SECTION  */
+.fourth-section .col-33 {
+  position: relative;
+}
+.fourth-section .col-33 i {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  color: white;
+}
+
+/* FOURTH SECTION  */
+/* FIFTH SECTION  */
+.fifth-section h2 {
+  text-align: center;
+}
+.fifth-section .testimonials .col-50:not(:last-child) {
+  margin-right: 40px;
+}
+.col-50.row {
+  flex-direction: column;
+  justify-content: space-between;
+}
+.testimonials .link {
+  text-align: right;
+  color: black;
+}
+.testimonials .link a {
+  color: black;
+}
+.date p:first-child {
+  margin-right: 15px;
+}
+
+.date .bg-black.text-white {
+  margin-bottom: 0;
+  padding: 15px 8px;
+  text-align: center;
+}
+.date {
+  align-items: center;
+  margin-bottom: 10px;
+}
+.opening-hours p {
+  padding: 10px;
+}
+
+.fifth-section .col-33:not(:last-child) {
+  margin-right: 60px;
+}
+/* FIFTH SECTION  */
+
+footer {
+  background-color: #f3f3f3;
+  text-align: right;
+  padding: 10px 0;
+}
+footer ul {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+footer ul li {
+  display: inline-block;
+}
+footer ul li:not(:last-child) a {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: gray;
+  color: white;
+
+  margin-right: 5px;
+}
+footer ul li:last-child a {
+  color: black;
+}
+@media (max-width: 768px) {
+  nav .inner ul {
+    display: none;
+  }
+  nav .bg-black.text-white {
+    flex: 100%;
+  }
+
+  .second-section,
+  .fifth-section {
+    display: block;
+  }
+
+  .third-section {
+    display: none;
+  }
+  .second-section .col-33:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 60px;
+  }
+  .fifth-section .col-33:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 425px) {
+  .first-section,
+  .fourth-section .row {
+    display: block;
+  }
+
+  .first-section .col-33:nth-child(2) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+} ;
