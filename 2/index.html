@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+            integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+            crossorigin="anonymous"
+        />
+
+        <title>Hello, world!</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>List of Users:</h1>
+            <div class="row">
+                <div class="col-10 offset-1 py-5">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">EMail</th>
+                                <th scope="col">Avatar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           
+                        </tbody>
+                    </table>
+                    <button
+                        type="button"
+                        class="btn btn-outline-dark"
+                        data-page="1"
+                    >
+                        1
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-outline-dark"
+                        data-page="2"
+                    >
+                        2
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-outline-dark"
+                        data-page="3"
+                    >
+                        3
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-outline-dark"
+                        data-page="4"
+                    >
+                        4
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script
+            src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+            crossorigin="anonymous"
+        ></script>
+        <script>
+            $(document).ready(function(){
+                getUsers(1);
+
+
+                $('.btn').click(function(e){
+                    const pageNumber = $(this).data('page');
+                    // console.log(pageNumber)
+                    getUsers(pageNumber);
+                })
+
+                function getUsers(pageNumber) {
+                    $.ajax({
+                        url: "https://reqres.in/api/users",
+                        type: "GET",
+                        dataType: "json",
+                        data: { page: pageNumber },
+                    }).done(function (res) {
+                        console.log(res);
+                        $('tbody').html('');
+                        const resArr = res.data;
+                        resArr.forEach(element => {
+                        const {id, email, first_name, last_name, avatar} = element;
+                            $('tbody').append(`<tr>
+                                                <th scope="row">${id}</th>
+                                                <td>${first_name}</td>
+                                                <td>${last_name}</td>
+                                                <td>${email}</td>
+                                                <td><img src="${avatar}"/></td>
+                                            </tr>`);
+                    });
+                });
+            }
+            });
+            
+        </script>
+    </body>
+</html>
