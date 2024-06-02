@@ -1,0 +1,27 @@
+.carousel .carousel-caption {
+  top: 50%;
+  left: 50%;
+  bottom: unset;
+  right: unset;
+  transform: translate(-50%, -50%);
+}
+
+.label {
+  bottom: 10px;
+  left: 10px;
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    background-color: transparent !important;
+  }
+
+  .navbar .container {
+    border-bottom: 1px solid white;
+  }
+}
