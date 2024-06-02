@@ -1,0 +1,134 @@
+body {
+  margin: 0;
+  color: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin-top: 0;
+}
+
+.bg-lightgrey {
+  background-color: rgba(130, 139, 159, 255);
+}
+.bg-brown {
+  background-color: rgba(122, 53, 60, 255);
+}
+.bg-green {
+  background-color: rgba(79, 150, 82, 255);
+}
+
+.bg-dark {
+  background-color: rgb(32, 32, 37);
+}
+
+.container::after {
+  content: "";
+  width: 100%;
+  display: block;
+  clear: both;
+}
+nav {
+  padding: 13px 10px;
+}
+ul {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+ul li {
+  display: inline-block;
+}
+ul li:last-child {
+  float: right;
+}
+ul li:first-child {
+  margin-right: 15px;
+}
+ul li a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.inner {
+  width: 90%;
+  margin: 0 auto;
+}
+.forty-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.forty-section a,
+button {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1px solid white;
+  padding: 10px 15px;
+  display: inline-block;
+}
+
+.content-box p {
+  width: 30%;
+  float: left;
+}
+
+.col {
+  float: left;
+  padding: 50px 0;
+}
+
+.col-40 {
+  width: 40%;
+}
+.col-60 {
+  width: 60%;
+}
+
+.container .col:first-child {
+  border-right: 1px solid white;
+}
+
+.forty-section.bg-lightgrey .content-box p {
+  float: none;
+}
+
+.text-block {
+  text-align: center;
+}
+
+.text-block h2 {
+  text-transform: uppercase;
+}
+
+input {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+label {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+button {
+  background-color: transparent;
+}
+
+.col-50 {
+  width: 49%;
+  display: inline-block;
+}
+.col-50:first-child {
+  margin-right: 1%;
+}
