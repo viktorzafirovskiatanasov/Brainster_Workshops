@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Workshop 27 - JQuery Ex. 2</title>
+    <style>
+      #sqwr{
+        box-sizing: border-box;
+        width: 150px;
+        height: 150px;
+        border: 3px solid black;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="sqwr"></div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+      // function(){}
+      // $(window).on('load', function(){})
+      $(document).ready(function(){
+        console.log($('#sqwr'));       
+        // const square = $('#sqwr');
+        $('#sqwr').mouseover(function(e){
+          // in JQuery 3.7.1 event object is availabale for use
+          // console.log(e.target)
+
+          // square.css('margin-left', '85%'); option 1
+          // $('#sqwr').css('margin-left', '85%'); option 2
+          // $(e.target).css('margin-left', '85%'); option 3
+          // $(this).css('margin-left', '85%'); //option 4
+
+          if($(this).css('margin-left') == '0px'){
+            $(this).animate({ 'margin-left' : '85%' }, 1500);
+          } else {
+            $(this).animate({ 'margin-left' : '0%' }, 1500);
+          }
+        })
+      });
+    </script>
+  </body>
+</html>

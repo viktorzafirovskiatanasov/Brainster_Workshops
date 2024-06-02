@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop 27 - JQuery Ex. 1</title>
+</head>
+<body>
+    <div>
+        <label for="firstNumber">First number:</label>
+        <br>
+        <input type="number" id="firstNumber">
+        <br>
+        <br>
+        <label for="secondNumber">Second number:</label>
+        <br>
+        <input type="number" id="secondNumber">
+        <br>
+        <button id="submitBtn">Submit</button>
+    </div>
+    <div>
+        <p id="p-1"></p>
+        <p id="p-2"></p>
+
+        <p id="p-3"></p>
+        <p id="p-4"></p>
+        <p id="p-5"></p>
+        <p id="p-6"></p>
+
+
+        <p id="p-7"></p>
+        <p id="p-8"></p>
+
+    </div>
+
+    <!-- NOTE: THE JQUERY VERSION IS IMPORTANT -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+    <script>
+        //our code
+        const button = $('#submitBtn');
+
+
+
+        button.on('click', function(){
+            const firstNumber = parseInt($('#firstNumber').val());
+            const secondNumber = parseInt($('#secondNumber').val());
+
+            // console.log(firstNumber + secondNumber);
+            // console.log('clicked: ', $('#firstNumber').val(), $('#secondNumber').val());
+           $('#p-1').text(`The first number is ${firstNumber}`);
+           $('#p-2').text(`The second number is ${secondNumber}`);
+
+           $('#p-3').text(`${firstNumber} + ${secondNumber} is ${firstNumber + secondNumber}`);
+           $('#p-4').text(`${firstNumber} - ${secondNumber} is ${firstNumber - secondNumber}`);
+           $('#p-5').text(`${firstNumber} * ${secondNumber} is ${firstNumber * secondNumber}`);
+           $('#p-6').text(`${firstNumber} / ${secondNumber} is ${firstNumber / secondNumber}`);
+
+           $('#p-7').text(`The number ${firstNumber} is ${checkPrime(firstNumber)}`);
+           $('#p-8').text(`The number ${secondNumber} is ${checkPrime(secondNumber)}`);
+
+        });
+
+        function checkPrime(number){
+            if(number == 1 || number == 2){
+                return 'prime';
+            }
+            for (let i = 2; i < number; i++) {
+                if(number % i == 0){
+                    return 'not prime';
+                }
+            }
+            return 'prime';
+        }
+
+        
+    </script>
+</body>
+</html>
