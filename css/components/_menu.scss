@@ -1,0 +1,50 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+.menu {
+  background-color: var.$background-color-primary;
+  position: fixed;
+  top: 0;
+  left: 0;
+  //   right: 0;
+  width: 100%;
+  padding-top: math.div(var.$gutter-base, 3);
+  padding-bottom: math.div(var.$gutter-base, 3);
+  .inner {
+    @extend %wrap;
+    display: flex;
+    justify-content: space-between;
+
+    ul {
+      display: flex;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+
+      li:not(:last-child) {
+        margin-right: math.div(var.$gutter-base, 3);
+      }
+
+      @include mix.tablet {
+        display: none;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: var.$text-color-primary;
+      text-transform: uppercase;
+    }
+  }
+
+  .burger-menu {
+    display: none;
+    i {
+      color: var.$text-color-primary;
+    }
+    @include mix.tablet {
+      display: block;
+    }
+  }
+}

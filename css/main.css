@@ -1,0 +1,340 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding-top: 44px;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin-top: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 0.9375rem;
+  line-height: 1;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 3.75rem;
+}
+@media (max-width: 425px) {
+  h1 {
+    font-size: 2.75rem;
+  }
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 1.75rem;
+}
+@media (max-width: 425px) {
+  h2 {
+    font-size: 1.5625rem;
+  }
+}
+
+h3 {
+  font-size: 1.5625rem;
+}
+@media (max-width: 425px) {
+  h3 {
+    font-size: 1.25rem;
+  }
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.625rem 0.9375rem;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  background-color: #FFF;
+}
+
+footer, .contact, .services, .block {
+  padding-top: 3.75rem;
+  padding-bottom: 3.75rem;
+}
+@media (max-width: 768px) {
+  footer, .contact, .services, .block {
+    padding-top: 1.875rem;
+    padding-bottom: 1.875rem;
+  }
+}
+
+footer, .contact .inner, .services .inner, .block .inner, .intro .inner, .menu .inner {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 999px) {
+  footer, .contact .inner, .services .inner, .block .inner, .intro .inner, .menu .inner {
+    width: 100%;
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+  }
+}
+
+.menu {
+  background-color: #f4511e;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+}
+.menu .inner {
+  display: flex;
+  justify-content: space-between;
+}
+.menu .inner ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.menu .inner ul li:not(:last-child) {
+  margin-right: 0.625rem;
+}
+@media (max-width: 768px) {
+  .menu .inner ul {
+    display: none;
+  }
+}
+.menu .inner a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+}
+.menu .burger-menu {
+  display: none;
+}
+.menu .burger-menu i {
+  color: #fff;
+}
+@media (max-width: 768px) {
+  .menu .burger-menu {
+    display: block;
+  }
+}
+
+.intro {
+  background-color: #f4511e;
+  padding-top: 5.625rem;
+  padding-bottom: 5.625rem;
+}
+.intro .inner {
+  text-align: center;
+  color: #fff;
+}
+.intro .inner form {
+  display: flex;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 768px) {
+  .intro .inner form {
+    width: 100%;
+  }
+}
+.intro .inner input[type=email] {
+  flex: 1 1 auto;
+  padding: 0.625rem;
+  border: 1px solid #eee;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.intro .inner input[type=submit] {
+  padding: 0.625rem;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  background-color: #e81919;
+  color: #fff;
+  border: none;
+}
+
+.block .inner {
+  display: flex;
+}
+@media (max-width: 768px) {
+  .block .inner {
+    flex-wrap: wrap;
+  }
+}
+.block .inner .content-box {
+  flex: 1 1 80%;
+  margin-right: 3.75rem;
+}
+@media (max-width: 768px) {
+  .block .inner .content-box {
+    margin-right: 0;
+    margin-bottom: 3.75rem;
+  }
+}
+.block .inner .icon-box {
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .block .inner .icon-box {
+    flex-basis: 100%;
+  }
+}
+.block .inner .icon-box i {
+  font-size: 9.375rem;
+  color: #f4511e;
+}
+.block.reverse {
+  background-color: #eee;
+}
+.block.reverse .content-box {
+  margin-left: 3.75rem;
+  margin-right: 0;
+}
+@media (max-width: 768px) {
+  .block.reverse .content-box {
+    margin-left: 0;
+  }
+}
+.block.reverse .inner {
+  flex-direction: row-reverse;
+}
+
+.services .inner {
+  text-align: center;
+}
+.services .container {
+  margin-top: 3.75rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.services .container .icon-box {
+  flex-basis: 33.3%;
+}
+.services .container .icon-box i {
+  color: #f4511e;
+  font-size: 3.75rem;
+  margin-bottom: 0.9375rem;
+}
+.services .container .icon-box:nth-child(n+4) {
+  margin-top: 1.875rem;
+}
+@media (max-width: 768px) {
+  .services .container .icon-box {
+    flex-basis: 50%;
+  }
+  .services .container .icon-box:nth-child(n+3) {
+    margin-top: 1.875rem;
+  }
+}
+@media (max-width: 425px) {
+  .services .container .icon-box {
+    flex-basis: 100%;
+  }
+  .services .container .icon-box:nth-child(n+2) {
+    margin-top: 1.875rem;
+  }
+}
+
+.contact {
+  background-color: #eee;
+}
+.contact .inner {
+  display: flex;
+  flex-wrap: wrap;
+}
+.contact .inner .content-box,
+.contact .inner .form-box {
+  flex-basis: 50%;
+}
+@media (max-width: 768px) {
+  .contact .inner .content-box,
+  .contact .inner .form-box {
+    flex-basis: 100%;
+  }
+}
+.contact .inner .content-box ul {
+  list-style-type: none;
+  padding: 0;
+}
+.contact .inner .content-box ul i {
+  color: #f4511e;
+}
+.contact .inner .content-box ul a {
+  color: #000;
+  text-decoration: none;
+}
+.contact .inner .content-box .content-inner {
+  margin-right: 1.875rem;
+}
+@media (max-width: 768px) {
+  .contact .inner .content-box .content-inner {
+    margin-right: 0;
+  }
+}
+.contact .inner .form-box .form-row {
+  width: 100%;
+  margin-bottom: 0.625rem;
+}
+.contact .inner .form-box .row-flex {
+  display: flex;
+}
+@media (max-width: 425px) {
+  .contact .inner .form-box .row-flex {
+    display: block;
+  }
+}
+.contact .inner .form-box input,
+.contact .inner .form-box textarea {
+  border: 1px solid #eee;
+  padding: 0.625rem;
+  border-radius: 4px;
+}
+.contact .inner .form-box input {
+  flex-basis: 50%;
+}
+.contact .inner .form-box input:not(:last-child) {
+  margin-right: 5px;
+}
+@media (max-width: 425px) {
+  .contact .inner .form-box input {
+    width: 100%;
+  }
+  .contact .inner .form-box input:not(:last-child) {
+    margin-bottom: 0.625rem;
+  }
+}
+.contact .inner .form-box textarea {
+  width: 100%;
+}
+
+footer {
+  text-align: center;
+}
+footer p {
+  margin-bottom: 0;
+}/*# sourceMappingURL=main.css.map */
