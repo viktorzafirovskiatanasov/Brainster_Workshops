@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reservations</title>
+    <style>
+      table {
+        border: 6px dashed gray;
+      }
+      td,
+      th {
+        border-bottom: 1px solid gray;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Reserving a Room at Red Abbey Resort</h1>
+    <h2>Rooms and prices</h2>
+
+    <!-- <table border="3px" cellpadding="10px">
+      <caption>
+        Our guest room
+      </caption>
+      <tr>
+        <th>Room Type</th>
+        <th>Maximum Occupancy</th>
+        <th>Avg price per night</th>
+      </tr>
+      <tr>
+        <td>Attic room</td>
+        <td>1</td>
+        <td>100 $</td>
+      </tr>
+      <tr>
+        <td>Standard room</td>
+        <td>2</td>
+        <td>170 $</td>
+      </tr>
+      <tr>
+        <td>Garden view room</td>
+        <td>4</td>
+        <td>220$</td>
+      </tr>
+    </table> -->
+    <table cellpadding="10px">
+      <caption>
+        Our guest room
+      </caption>
+      <tr>
+        <th>Room Type</th>
+        <th>Maximum Occupancy</th>
+        <th>Avg price per night</th>
+      </tr>
+      <tr>
+        <td>Attic room</td>
+        <td>1</td>
+        <td>100 $</td>
+      </tr>
+      <tr>
+        <td>Standard room</td>
+        <td>2</td>
+        <td>170 $</td>
+      </tr>
+      <tr>
+        <td>Garden view room</td>
+        <td>4</td>
+        <td>220$</td>
+      </tr>
+    </table>
+    <h2>Submit a reservation request</h2>
+    <form>
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" name="firstName" />
+      <br /><br />
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" name="lastName" />
+      <br /><br />
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" />
+      <br /><br />
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" />
+      <br /><br />
+
+      <fieldset>
+        <legend>Prefered room type</legend>
+        <input type="radio" name="roomType" id="attic" value="attic" />
+        <label for="attic">Attic Room</label>
+        <input type="radio" name="roomType" id="standart" value="standart" />
+        <label for="standart">Standart Room</label>
+        <input type="radio" name="roomType" id="garden" value="garden" />
+        <label for="garden">Garden View suite</label>
+      </fieldset>
+      <br />
+      <label for="checkin">Check In</label>
+      <input type="date" id="checkin" name="checkin" />
+      <br /><br />
+      <label for="checkout">Check Out</label>
+      <input type="date" id="checkout" name="checkout" />
+      <br /><br />
+      <label for="comments">Comment or special request</label>
+      <br />
+      <textarea rows="10" cols="40" id="comments" name="comments"></textarea>
+      <br /><br />
+      <input type="submit" />
+    </form>
+    <a href="./index.html">Return to home</a>
+  </body>
+</html>
